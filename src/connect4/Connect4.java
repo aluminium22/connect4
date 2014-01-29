@@ -5,6 +5,8 @@
  */
 package connect4;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Lorinlochridge
@@ -13,10 +15,12 @@ public class Connect4 {
     String name;
     String instructions = "This is connect four. the object of the game is to get four in a row."
             + "the first player to achieve this goal wins.";
-    class Player{
+    class Turns{
         int color;//color of player
-        int number;// number or players
+        String player1 = "1";//Identified by number 1
+        String player2 = "2";//Identified by number 2
     }
+       
     class Board{
        int boardcolor;// color of board
        int columns; //number of columns(6)
