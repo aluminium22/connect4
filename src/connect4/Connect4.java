@@ -14,8 +14,8 @@ import java.util.Scanner;
  */
 public class Connect4 {
     String name;
-    String instructions = "This is connect four. the object of the game is to get four in a row."
-            + "the first player to achieve this goal wins.";
+    String instructions = "  The first player to achieve this goal wins."
+            + "This is connect four. The object of the game is to get four in a row. \n " + "You can make your connections of 4 any direction, including vertical, horizontal, and angled.";
     //board body:
     String toprow = " _ _ _ _ _ _ ";
     String midrows = "|_|_|_|_|_|_|";
