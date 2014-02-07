@@ -22,6 +22,8 @@ public class Connect4 {
     String midrows = "|_|_|_|_|_|_|";
     //board variables
     int taken;
+    int newgame;
+    int help;
     
         /**
      * @param args the command line arguments
@@ -30,7 +32,8 @@ public class Connect4 {
         Connect4 myGame = new Connect4();
     myGame.getName1();
     myGame.getName2();
-    myGame.displayHelp();
+    myGame.display();
+    myGame.play();
             }
      
     public void getName1() {
@@ -43,7 +46,7 @@ public class Connect4 {
         System.out.println("Player 2, enter your name: ");
         this.name2 = input.next();
     }
-    public void displayHelp() {
+    public void display() {
         System.out.println("Welcome " + this.name1 + " and " + this.name2 + "\n");
         System.out.println(this.instructions);
         System.out.println(this.toprow);
@@ -52,5 +55,20 @@ public class Connect4 {
         System.out.println(this.midrows);
         System.out.println(this.midrows);
         System.out.println(this.midrows);
+    }
+    public void play(){
+        System.out.println("Press 1 to start a new game, \n" + "Press 2 for help");
+            int i = 0;
+            Scanner choose = new Scanner(System.in);
+            if (choose.hasNextInt()) i = choose.nextInt();
+            if (i == 1) newGame();
+            if (i == 2) helpMenu();
+            }
+    public void helpMenu(){
+        System.out.println("Help Menu!");
+    }
+
+    private void newGame() {
+        System.out.println("New Game!");
     }
     }
