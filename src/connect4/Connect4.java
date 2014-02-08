@@ -1,21 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 //testing
 package connect4;
 
 import java.util.Scanner;
 
 /**
- *
- * @author Lorinlochridge
- */
+*
+* @author Lorinlochridge
+*/
 public class Connect4 {
     String name1;
     String name2;
-    String instructions = "  The first player to achieve this goal wins."
+    String instructions = " The first player to achieve this goal wins."
             + "This is connect four. The object of the game is to get four in a row. \n You can make your connections of 4 any direction, including vertical, horizontal, and angled. \n This is how the playing board looks:";
     //Instruction board display:
     String toprow = " _ _ _ _ _ _ ";
@@ -26,8 +26,8 @@ public class Connect4 {
     int help;
     
         /**
-     * @param args the command line arguments
-     */
+* @param args the command line arguments
+*/
     public static void main(String[] args) {
         Connect4 myGame = new Connect4();
     myGame.getName1();
