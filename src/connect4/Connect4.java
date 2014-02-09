@@ -6,6 +6,8 @@
 //testing
 package connect4;
 
+
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -27,13 +29,19 @@ public class Connect4 {
     
         /**
 * @param args the command line arguments
+     * @throws java.io.IOException
 */
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+        throws IOException {
         Connect4 myGame = new Connect4();
-    myGame.getName1();
-    myGame.getName2();
-    myGame.display();
-    myGame.play();
+        myGame.getName1();
+        myGame.getName2();
+        myGame.display();
+        myGame.menu();
+        HelpMenu HM = new HelpMenu();
+        HM.HelpMenu();
+        NewGame NG = new NewGame();
+        NG.NewGame();
             }
      
     public void getName1() {
@@ -56,19 +64,33 @@ public class Connect4 {
         System.out.println(this.midrows);
         System.out.println(this.midrows);
     }
-    public void play(){
-        System.out.println("Press 1 to start a new game, \n" + "Press 2 for help");
-            int i = 0;
-            Scanner choose = new Scanner(System.in);
-            if (choose.hasNextInt()) i = choose.nextInt();
-            if (i == 1) newGame();
-            if (i == 2) helpMenu();
+    public void menu()
+        throws java.io.IOException {
+        char choice, ignore;
+        
+        for(;;) {
+            do {
+    System.out.println("\n" + "Let's get started");
+    System.out.println("To start a new game, choose 1");
+    System.out.println("To go to the help menu, choose 2");
+    
+    choice = (char) System.in.read();
+    do {
+        ignore = (char) System.in.read();
+    } while(ignore != '\n');
+            } while( choice == 1 | choice == 2 & choice != 'q');
+            if(choice == 'q') break;
+            
+            switch(choice) {
+                case '1':
+                    System.out.println("New Game");
+                    NewGame.NewGame();
+                    break;
+                case '2':
+                    System.out.println("Help Menu");
+                    HelpMenu.HelpMenu();
+                    break;
             }
-    public void helpMenu(){
-        System.out.println("Help Menu!");
-    }
-
-    private void newGame() {
-        System.out.println("New Game!");
     }
     }
+}
