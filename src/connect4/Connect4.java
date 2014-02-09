@@ -79,8 +79,7 @@ public class Connect4 {
         ignore = (char) System.in.read();
     } while(ignore != '\n');
             } while( choice == 1 | choice == 2 & choice != 'q');
-            if(choice == 'q') break;
-            
+            if(choice == 'q') break;            
             switch(choice) {
                 case '1':
                     System.out.println("New Game");
@@ -90,7 +89,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
                     break;
-            }
-    }
+            } while(choice == 1 | choice == 2);
+        }
     }
 }
