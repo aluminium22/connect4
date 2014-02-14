@@ -17,7 +17,8 @@ import java.util.Scanner;
 public class Connect4 {
     String name1;
     String name2;
-    String instructions = " Welcome to Connect 4!";
+    String instructions = " Welcome to Connect 4!"
+            + "\n" + "Lets Play!";
     //Instruction board display:
     String toprow = " _ _ _ _ _ _ ";
     String midrows = "|_|_|_|_|_|_|";
@@ -88,7 +89,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
                     break;
-            } while(choice != 'q');
-        }
+            } while(choice != 'q'); break;
+        }  
     }
 }
