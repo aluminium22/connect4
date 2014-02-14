@@ -31,7 +31,7 @@ public class Connect4 {
 * @param args the command line arguments
      * @throws java.io.IOException
 */
-    public static void main(String[] args) 
+    public void main(String[] args) 
         throws IOException {
         Connect4 myGame = new Connect4();
         myGame.getName1();
@@ -89,7 +89,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
                     break;
-            } while(choice != 'q'); break;
+            } while(choice != 'q');
         }  
     }
 }

@@ -13,9 +13,31 @@ package connect4;
 public class HelpMenu {
     String ready;
     String directions;
-    public static void HelpMenu() {
+    public static void HelpMenu() 
+        throws java.io.IOException{
+        char help, ignore;
+    
+        for(;;) {
+            do {
         System.out.println("How can we help?");
-        HowTo();
+        
+        help = (char) System.in.read();
+        do {
+            ignore = (char) System.in.read();
+        }while(ignore != '\n');
+            }while(help == '1' | help == '2' & help != 'q');
+            if (help == 'q')break;
+            switch(help) {
+                case '1':
+                    System.out.println("how to play");
+                    HelpMenu.HowTo();
+                     break;
+                case '2':
+                    System.out.println("On your turn");
+                    HelpMenu.YourTurn();
+                    break;
+            }while(help!= 'q');
+        }
     }
     public static void HowTo(){
     String toprow = " _ _ _ _ _ _ _ ";
@@ -46,7 +68,11 @@ public class HelpMenu {
         System.out.println("|X|O|O|O|_|_|_|");
         System.out.println("|X|X|O|X|_|_|_|");
         
-        
+    }
+    public static void YourTurn(){
+        System.out.println("On your turn, select a column to place your piece." + "\n" + 
+                "Your piece will drop in the column and will stack on top of the" + "\n" + 
+                "piece below it.  I yours is the first it will be on the bottom of the stack.");
     }
         
     }
