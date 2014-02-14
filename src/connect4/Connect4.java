@@ -89,7 +89,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
                     break;
-            } while(choice == 1 | choice == 2);
+            } while(choice != 'q');
         }
     }
 }
