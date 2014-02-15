@@ -20,24 +20,28 @@ public class HelpMenu {
         for(;;) {
             do {
         System.out.println("How can we help?");
+        System.out.println("Learn how to play? press 1");
+        System.out.println("What about your turn? press 2");
         
         help = (char) System.in.read();
         do {
             ignore = (char) System.in.read();
         }while(ignore != '\n');
-            }while(help == '1' | help == '2' & help != 'q');
+            }while(help == 1 | help == 2 & help != 'q');
             if (help == 'q')break;
             switch(help) {
                 case '1':
                     System.out.println("how to play");
-                    HelpMenu.HowTo();
+                    HowTo();
                      break;
                 case '2':
                     System.out.println("On your turn");
-                    HelpMenu.YourTurn();
+                    YourTurn();
                     break;
             }while(help!= 'q');
         }
+        System.out.println("just another test line");
+        
     }
     public static void HowTo(){
     String toprow = " _ _ _ _ _ _ _ ";

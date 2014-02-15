@@ -31,7 +31,7 @@ public class Connect4 {
 * @param args the command line arguments
      * @throws java.io.IOException
 */
-    public void main(String[] args) 
+    public static void main(String[] args) 
         throws IOException {
         Connect4 myGame = new Connect4();
         myGame.getName1();
@@ -39,9 +39,9 @@ public class Connect4 {
         myGame.display();
         myGame.menu();
         HelpMenu HM = new HelpMenu();
-        HM.HelpMenu();
+        HM.HowTo();
+        HM.YourTurn();
         NewGame NG = new NewGame();
-        NG.NewGame();
             }
      
     public void getName1() {
