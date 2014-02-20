@@ -36,6 +36,7 @@ public class NewGame {
             if (play == 'q')break;
             switch(play) {
                 case '1':
+                    board();
                     System.out.println("Start Game");
                     break;
                 case '2':
@@ -44,4 +45,21 @@ public class NewGame {
                 }while(play !='q');
             }
         }
+    public static void board(){
+        
+        int a, b;
+        String board[][] = new String[13][15];
+        
+        for(a=0; a<13; a++){
+            for(b=0; b<15; b++){
+                String e;
+                if (b%2==0) e="|";
+                else e="O";
+                if (a%2==0) e="-";
+                board[a][b] = e;
+                System.out.print(board[a][b] + " ");
+            }
+            System.out.println();
+        }
+    }
     }
