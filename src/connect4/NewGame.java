@@ -41,11 +41,13 @@ public class NewGame {
                     break;
                 case '2':
                     System.out.println("go home");
+                    Connect4 home = new Connect4();
+                    home.menu();
                     break;
                 }while(play !='q');
             }
         }
-    public static void board(){
+    public static void board() throws IOException{
         
         int a, b;
         String board[][] = new String[13][15];
@@ -61,5 +63,6 @@ public class NewGame {
             }
             System.out.println();
         }
+        NewGame();
     }
     }

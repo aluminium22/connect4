@@ -6,6 +6,8 @@
 
 package connect4;
 
+import java.io.IOException;
+
 /**
  *
  * @author Rob
@@ -22,12 +24,13 @@ public class HelpMenu {
         System.out.println("How can we help?");
         System.out.println("Learn how to play? press 1");
         System.out.println("What about your turn? press 2");
+        System.out.println("To go home, press 3");
         
         help = (char) System.in.read();
         do {
             ignore = (char) System.in.read();
         }while(ignore != '\n');
-            }while(help == 1 | help == 2 & help != 'q');
+            }while(help == 1 | help == 2 | help ==3 & help != 'q');
             if (help == 'q')break;
             switch(help) {
                 case '1':
@@ -38,12 +41,17 @@ public class HelpMenu {
                     System.out.println("On your turn");
                     YourTurn();
                     break;
+                case '3':
+                    System.out.println("go home");
+                    Connect4 home = new Connect4();
+                    home.menu();
+                    break;
             }while(help!= 'q');
         }
         System.out.println("just another test line");
         
     }
-    public static void HowTo(){
+    public static void HowTo() throws IOException{
     String toprow = " _ _ _ _ _ _ _ ";
     String midrows = "|_|_|_|_|_|_|_|";
         System.out.println("You start with a blank board like this one");
@@ -71,12 +79,16 @@ public class HelpMenu {
         System.out.println("|X|_|_|_|_|_|_|");
         System.out.println("|X|O|O|O|_|_|_|");
         System.out.println("|X|X|O|X|_|_|_|");
-        
-    }
-    public static void YourTurn(){
         System.out.println("On your turn, select a column to place your piece." + "\n" + 
                 "Your piece will drop in the column and will stack on top of the" + "\n" + 
                 "piece below it.  I yours is the first it will be on the bottom of the stack.");
-    }
+        HelpMenu();
         
+    }
+    public static void YourTurn() throws IOException{
+        System.out.println("On your turn, select a column to place your piece." + "\n" + 
+                "Your piece will drop in the column and will stack on top of the" + "\n" + 
+                "piece below it.  I yours is the first it will be on the bottom of the stack.");
+        HelpMenu();
+    }
     }
