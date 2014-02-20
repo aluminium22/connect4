@@ -24,9 +24,13 @@ public class NewGame {
         char play, ignore;
         for(;;) {
             do{
-                System.out.println("NEW GAME!!");
-                System.out.println("Start, press 1");
-                System.out.println("Go back, press 2");
+                System.out.println("--------------------");
+                System.out.println("| NEW GAME!!       |");
+                System.out.println("--------------------");
+                System.out.println("| Start, press 1   |");
+                System.out.println("--------------------");
+                System.out.println("| Go back, press 2 |");
+                System.out.println("--------------------");
                 
                 play = (char) System.in.read();
                 do {

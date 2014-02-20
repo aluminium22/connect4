@@ -55,7 +55,9 @@ public class Connect4 {
         this.name2 = input.next();
     }
     public void display() {
-        System.out.println("Welcome " + this.name1 + " and " + this.name2 + "\n");
+        System.out.println("-----------------------------------------------------");
+        System.out.println("| Welcome " + this.name1 + " and " + this.name2 + "  |");
+        System.out.println("-----------------------------------------------------");
         System.out.println(this.instructions);
         System.out.println(this.toprow);
         System.out.println(this.midrows);
@@ -70,9 +72,13 @@ public class Connect4 {
         
         for(;;) {
             do {
-    System.out.println("\n" + "Let's get started");
-    System.out.println("To start a new game, choose 1");
-    System.out.println("To go to the help menu, choose 2");
+    System.out.println(" -----------------------------------");
+    System.out.println("|  Let's get started                |");
+    System.out.println(" -----------------------------------");
+    System.out.println("|  To start a new game, choose 1    |");
+    System.out.println(" -----------------------------------");
+    System.out.println("|  To go to the help menu, choose 2 |");
+    System.out.println(" -----------------------------------");
     
     choice = (char) System.in.read();
     do {
