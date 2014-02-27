@@ -40,7 +40,8 @@ public class NewGame {
             if (play == 'q')break;
             switch(play) {
                 case '1':
-                    board();
+                    Play game = new Play();
+                    game.playgame();
                     System.out.println("Start Game");
                     break;
                 case '2':

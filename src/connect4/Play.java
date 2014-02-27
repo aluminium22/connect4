@@ -141,7 +141,7 @@ public class Play
     return null;
   }
    
-  public static void main (String[] args)
+  public static void playgame ()
   {
     String[][] f = createPattern();
     boolean loop = true;
