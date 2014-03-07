@@ -7,6 +7,7 @@ import java.util.Scanner;
 //lots of methods for each aspect of the game
 public class Play
 {
+    
   //We need to first create the basic visual pattern
   public static String[][] createPattern()
   {
@@ -43,8 +44,8 @@ public class Play
   //player 1s turn (red)
   public static void dropRedPattern(String[][] f)
   {
-    System.out.println("Drop a red disk at column (0–6): ");
-    Scanner col = new Scanner (System.in);  
+    System.out.println("Player 1, drop a disk in column (0–6): ");
+    Scanner col = new Scanner (System.in); 
      
     int c = 2*col.nextInt()+1;
     for (int i =5;i>=0;i--)
@@ -61,8 +62,9 @@ public class Play
   //player 2s turn(yellow)
   public static void dropYellowPattern(String[][] f)
   {
-    System.out.println("Drop a yellow disk at column (0–6): ");
+    System.out.println("Player 2, drop a disk in column (0–6): ");
     Scanner col = new Scanner (System.in);
+    
     
     int c = 2*col.nextInt()+1;
     for (int i =5;i>=0;i--)
