@@ -33,11 +33,12 @@ public class NewGame {
                 System.out.println("--------------------");
                 
                 play = (char) System.in.read();
-                do {
+                /* do {
                     ignore = (char) System.in.read();
-                }while(ignore != '\n');
-            }while(play==1 | play==2 & play!='q');
-            if (play == 'q')break;
+                }while(ignore != '\n'); */
+            }while(play==1 || play==2);
+            if (play != 1 || play !=2) 
+                System.out.println("invalid entry");
             switch(play) {
                 case '1':
                     Play game = new Play();
@@ -49,7 +50,7 @@ public class NewGame {
                     Connect4 home = new Connect4();
                     home.menu();
                     break;
-                }while(play !='q');
+                }
             }
         }
     public static void board() throws IOException{
@@ -68,6 +69,6 @@ public class NewGame {
             }
             System.out.println();
         }
-        NewGame();
+        start();
     }
     }

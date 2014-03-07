@@ -1,5 +1,6 @@
 package connect4;
 
+import java.io.IOException;
 import java.util.Scanner;
    
 //This will be.. a huge code so we will have to make
@@ -26,6 +27,7 @@ public class Play
     return f;
   }
    
+  //create playing field
   public static void printPattern(String[][] f)
   {
     for (int i =0;i<f.length;i++)
@@ -38,13 +40,13 @@ public class Play
     }
   }
    
+  //player 1s turn (red)
   public static void dropRedPattern(String[][] f)
   {
     System.out.println("Drop a red disk at column (0–6): ");
-    Scanner scan = new Scanner (System.in);
+    Scanner col = new Scanner (System.in);  
      
-    int c = 2*scan.nextInt()+1;
-    
+    int c = 2*col.nextInt()+1;
     for (int i =5;i>=0;i--)
     {
       if (f[i][c] == " ")
@@ -56,11 +58,13 @@ public class Play
     }
   }
    
+  //player 2s turn(yellow)
   public static void dropYellowPattern(String[][] f)
   {
     System.out.println("Drop a yellow disk at column (0–6): ");
-    Scanner scan = new Scanner (System.in);
-    int c = 2*scan.nextInt()+1;
+    Scanner col = new Scanner (System.in);
+    
+    int c = 2*col.nextInt()+1;
     for (int i =5;i>=0;i--)
     {
       if (f[i][c] == " ")
@@ -72,7 +76,7 @@ public class Play
     }
   }
    
- 
+ //did someone win yet?
   public static String checkWinner(String[][] f)
   {
      
@@ -141,7 +145,9 @@ public class Play
     return null;
   }
    
-  public static void playgame ()
+  
+  //let's play!
+  public static void playgame () throws IOException
   {
     String[][] f = createPattern();
     boolean loop = true;
@@ -162,5 +168,6 @@ public class Play
          loop = false;
     }
   }
+    connect4.NewGame.NewGame();
 }
 }

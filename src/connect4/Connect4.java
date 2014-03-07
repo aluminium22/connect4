@@ -38,21 +38,25 @@ public class Connect4 {
         myGame.getName2();
         myGame.display();
         myGame.menu();
-        HelpMenu HM = new HelpMenu();
-        HM.HowTo();
-        HM.YourTurn();
+        HelpMenu.HowTo();
+        HelpMenu.YourTurn();
         NewGame NG = new NewGame();
             }
+        static char p1, p2;
      
     public void getName1() {
-    Scanner input = new Scanner(System.in);
-    System.out.println("Player 1, enter your name: ");
-    this.name1 = input.next();
+        Scanner name = new Scanner(System.in);
+        System.out.println("Player 1, enter your name: ");
+        this.p1 = name.next().charAt(0);
+        System.out.println("Your token will be " + p1);
+        this.name1 = name.next();
     }
     public void getName2() {
-        Scanner input = new Scanner(System.in);
+        Scanner name = new Scanner(System.in);
         System.out.println("Player 2, enter your name: ");
-        this.name2 = input.next();
+        this.p2 = name.next().charAt(0);
+        System.out.println("Your token will be " + p2);
+        this.name2 = name.next();
     }
     public void display() {
         System.out.println("-----------------------------------------------------");
@@ -72,20 +76,23 @@ public class Connect4 {
         
         for(;;) {
             do {
-    System.out.println(" -----------------------------------");
-    System.out.println("|  Let's get started                |");
-    System.out.println(" -----------------------------------");
-    System.out.println("|  To start a new game, choose 1    |");
-    System.out.println(" -----------------------------------");
-    System.out.println("|  To go to the help menu, choose 2 |");
-    System.out.println(" -----------------------------------");
+                System.out.println(" -----------------------------------");
+                System.out.println("|  Let's get started                |");
+                System.out.println(" -----------------------------------");
+                System.out.println("|  To start a new game, choose 1    |");
+                System.out.println(" -----------------------------------");
+                System.out.println("|  To go to the help menu, choose 2 |");
+                System.out.println(" -----------------------------------");
+                System.out.println("|  To quit, press 3                 |");
+                System.out.println(" -----------------------------------");
     
-    choice = (char) System.in.read();
-    do {
-        ignore = (char) System.in.read();
-    } while(ignore != '\n');
-            } while( choice == 1 | choice == 2 & choice != 'q');
-            if(choice == 'q') break;            
+                choice = (char) System.in.read();
+                /* do {
+                    ignore = (char) System.in.read();
+                    } while(ignore != '\n'); */
+            }while( choice == 1 || choice == 2);
+            if(choice != 1 || choice != 2) 
+                System.out.println("Bad Choice.  Try again.");
             switch(choice) {
                 case '1':
                     System.out.println("New Game");
@@ -95,7 +102,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
                     break;
-            } while(choice != 'q');
+            }
         }  
     }
 }

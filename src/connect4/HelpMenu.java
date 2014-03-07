@@ -28,11 +28,12 @@ public class HelpMenu {
         System.out.println("To go home, press 3");
         
         help = (char) System.in.read();
-        do {
+        /* do {
             ignore = (char) System.in.read();
-        }while(ignore != '\n');
-            }while(help == 1 | help == 2 | help ==3 & help != 'q');
-            if (help == 'q')break;
+        }while(ignore != '\n'); */
+            }while(help == 1 || help == 2 || help ==3);
+            if (help != 1 || help != 2 || help != 3)
+                System.out.println("invalid entry");
             switch(help) {
                 case '1':
                     System.out.println("how to play");
@@ -47,9 +48,8 @@ public class HelpMenu {
                     Connect4 home = new Connect4();
                     home.menu();
                     break;
-            }while(help!= 'q');
+            }
         }
-        System.out.println("just another test line");
         
     }
     public static void HowTo() throws IOException{
