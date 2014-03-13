@@ -21,7 +21,7 @@ public class NewGame {
     }
     public static void start() 
         throws IOException{
-        char play, ignore;
+        char play;
         for(;;) {
             do{
                 System.out.println("--------------------");

@@ -26,8 +26,8 @@ public class Connect4 {
     int help;
     String name1;
     String name2;
-    String p1;
-    String p2;
+    public String p1;
+    public String p2;
     
     
         /**
