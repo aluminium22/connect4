@@ -7,6 +7,7 @@
 package connect4;
 
 
+import connect4.menus.HelpMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
