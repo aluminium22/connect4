@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package connect4.menus;
+package help;
 
 import connect4.Connect4;
 import java.io.IOException;
