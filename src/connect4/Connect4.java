@@ -25,8 +25,8 @@ public class Connect4 {
     int taken;
     int newgame;
     int help;
-    String name1;
-    String name2;
+    static String name1;
+    static String name2;
     public static String p1;
     public static String p2;
     

@@ -7,7 +7,6 @@ import java.util.Scanner;
 //lots of methods for each aspect of the game
 public class Play
 {
-    Connect4 player = new Connect4();
     static String p1 = Connect4.p1;
     static String p2 = Connect4.p2;
     
@@ -169,9 +168,9 @@ public class Play
        if (checkWinner(f) != null)
        {
           if (checkWinner(f) == p1)
-             System.out.println("The red player won.");
+             System.out.println("Congratulations " + Connect4.name1 + "!  You won!");
           else if (checkWinner(f)== p2)
-            System.out.println("The yellow player won.");
+            System.out.println("Congratulations " + Connect4.name2 + "!  You won!");
          loop = false;
     }
   }
