@@ -7,6 +7,10 @@ import java.util.Scanner;
 //lots of methods for each aspect of the game
 public class Play
 {
+    Connect4 player = new Connect4();
+    static String p1 = Connect4.p1;
+    static String p2 = Connect4.p2;
+    
     
   //We need to first create the basic visual pattern
   public static String[][] createPattern()
@@ -42,7 +46,7 @@ public class Play
   }
    
   //player 1s turn (red)
-  public static void dropRedPattern(String[][] f)
+  public static void p1Turn(String[][] f)
   {
     System.out.println("Player 1, drop a disk in column (0–6): ");
     Scanner col = new Scanner (System.in); 
@@ -52,7 +56,7 @@ public class Play
     {
       if (f[i][c] == " ")
       {
-        f[i][c] = "R";
+        f[i][c] = p1;
         break;
       }
        
@@ -60,7 +64,7 @@ public class Play
   }
    
   //player 2s turn(yellow)
-  public static void dropYellowPattern(String[][] f)
+  public static void p2Turn(String[][] f)
   {
     System.out.println("Player 2, drop a disk in column (0–6): ");
     Scanner col = new Scanner (System.in);
@@ -71,7 +75,7 @@ public class Play
     {
       if (f[i][c] == " ")
       {
-        f[i][c] = "Y";
+        f[i][c] = p2;
         break;
       }
        
@@ -155,17 +159,18 @@ public class Play
     boolean loop = true;
     int count = 0;
     printPattern(f);
+    System.out.println(p1 + ", and " + p2);
     while(loop)
     {
-       if (count % 2 == 0) dropRedPattern(f);
-       else dropYellowPattern(f);
+       if (count % 2 == 0) p1Turn(f);
+       else p2Turn(f);
        count++;//We need to keep track of the turns
        printPattern(f);
        if (checkWinner(f) != null)
        {
-          if (checkWinner(f) == "R")
+          if (checkWinner(f) == p1)
              System.out.println("The red player won.");
-          else if (checkWinner(f)== "Y")
+          else if (checkWinner(f)== p2)
             System.out.println("The yellow player won.");
          loop = false;
     }
