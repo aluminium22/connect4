@@ -37,9 +37,11 @@ public class Connect4 {
 */
     public static void main(String[] args) 
         throws IOException {
+        
         Connect4 myGame = new Connect4();
         myGame.getName1();
         myGame.getName2();
+        HomeMenu.MenuFrame(args);
         myGame.display();
         myGame.menu();
         HelpMenu.HowTo();
@@ -76,25 +78,22 @@ public class Connect4 {
     }
     public void menu()
         throws java.io.IOException {
-        char choice, ignore;
+        char choice;
         
         for(;;) {
-            do {
-                System.out.println(" -----------------------------------");
-                System.out.println("|  Let's get started                |");
-                System.out.println(" -----------------------------------");
-                System.out.println("|  To start a new game, choose 1    |");
-                System.out.println(" -----------------------------------");
-                System.out.println("|  To go to the help menu, choose 2 |");
-                System.out.println(" -----------------------------------");
-    
                 choice = (char) System.in.read();
-                /* do {
-                    ignore = (char) System.in.read();
-                    } while(ignore != '\n'); */
+            if (choice != 1 || choice != 2)
+            do {
+                System.out.println(" ----------------------------------");
+                System.out.println("|  Let's get started               |");
+                System.out.println(" ----------------------------------");
+                System.out.println("|  To start a new game, press 1    |");
+                System.out.println(" ----------------------------------");
+                System.out.println("|  To go to the help menu, press 2 |");
+                System.out.println(" ----------------------------------");
+    
             }while(choice == 1 || choice == 2);
-            if(choice != 1 || choice != 2) 
-                System.out.println("Bad Choice.  Try again.");
+            else System.out.println("Invalid choice.  Input choice 1 or 2.");
             switch(choice) {
                 case '1':
                     System.out.println("New Game");
@@ -103,6 +102,7 @@ public class Connect4 {
                     System.out.println("Help Menu");
                     HelpMenu.HelpMenu();
             }
+                
         }  
     }
 }

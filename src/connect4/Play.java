@@ -16,7 +16,6 @@ public class Play
   {
      String[][] f = new String[7][15];
      
-    //Time to loop over each row from up to down
     for (int i =0;i<f.length;i++)
     {
        for (int j =0;j<f[i].length;j++)
@@ -28,10 +27,10 @@ public class Play
       }
        
     }
+    
     return f;
   }
    
-  //create playing field
   public static void printPattern(String[][] f)
   {
     for (int i =0;i<f.length;i++)
@@ -44,7 +43,6 @@ public class Play
     }
   }
    
-  //player 1s turn (red)
   public static void p1Turn(String[][] f)
   {
     System.out.println("Player 1, drop a disk in column (0–6): ");
@@ -62,7 +60,6 @@ public class Play
     }
   }
    
-  //player 2s turn(yellow)
   public static void p2Turn(String[][] f)
   {
     System.out.println("Player 2, drop a disk in column (0–6): ");
@@ -80,8 +77,7 @@ public class Play
        
     }
   }
-   
- //did someone win yet?
+  
   public static String checkWinner(String[][] f)
   {
      
