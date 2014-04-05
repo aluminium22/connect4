@@ -48,7 +48,7 @@ public class Connect4 {
         HelpMenu.YourTurn();
         NewGame NG = new NewGame();
             }
-     
+   //need to enter code here, just don't know how.
      
     public void getName1() {
         Scanner name = new Scanner(System.in);
