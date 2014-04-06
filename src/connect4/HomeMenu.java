@@ -20,7 +20,7 @@ class HomeMenu implements ActionListener {
     HomeMenu() {
         JFrame jfrm = new JFrame("Use a TextField");
         jfrm.setLayout(new FlowLayout());
-        jfrm.setSize(250, 250);
+        jfrm.setSize(250, 300);
         jfrm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jtf1 = new JTextField(10);
         jtf1.setActionCommand("myTF");
