@@ -38,35 +38,38 @@ public class Connect4 {
     public static void main(String[] args) 
         throws IOException {
         
-        HomeMenu menu = new HomeMenu();
+        //HomeMenu menu = new HomeMenu();
         Connect4 myGame = new Connect4();
-        //myGame.getName1();
-        //myGame.getName2();
-        HomeMenu.PlayerNames(args);
-        name1 = menu.player1;
+        myGame.getName1();
+        myGame.getName2();
         p1 = Character.toString(name1.charAt(0));
-        name2 = menu.player2;
         p2 = Character.toString(name2.charAt(0));
-        //myGame.display();
-        //myGame.menu();
-        //HelpMenu.HowTo();
-        //HelpMenu.YourTurn();
-        //NewGame NG = new NewGame();
+        //HomeMenu.PlayerNames(args);
+        //name1 = menu.player1;
+        //name2 = menu.player2;
+        //MainMenu.main(args);
+        myGame.display();
+        myGame.menu();
+        HelpMenu.HowTo();
+        HelpMenu.YourTurn();
+        NewGame NG = new NewGame();
             }
    //need to enter code here, just don't know how.
      
-   /*public void getName1() {
+   public void getName1() {
         Scanner name = new Scanner(System.in);
         System.out.println("Player 1, enter your name: ");
         this.name1 = name.next();
+        p1 = Character.toString(name1.charAt(0));
         System.out.println("Your token will be " + p1);
-    }*/
-    /*public void getName2() {
+    }
+    public void getName2() {
         Scanner name = new Scanner(System.in);
         System.out.println("Player 2, enter your name: ");
         this.name2 = name.next();
+        p2 = Character.toString(name2.charAt(0));
         System.out.println("Your token will be " + p2);
-    }*/
+    }
     public void display() {
         System.out.println("-----------------------------------------------------");
         System.out.println("| Welcome " + this.name1 + " and " + this.name2 + "  |");
@@ -96,7 +99,7 @@ public class Connect4 {
                 System.out.println(" ----------------------------------");
     
             }while(choice == 1 || choice == 2);
-            else System.out.println("Invalid choice.  Input choice 1 or 2.");
+            //else System.out.println("Invalid choice.  Input choice 1 or 2.");
             switch(choice) {
                 case '1':
                     System.out.println("New Game");
