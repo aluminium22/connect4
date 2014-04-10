@@ -29,15 +29,15 @@ public class boardPanel extends javax.swing.JFrame {
         javax.swing.JPanel JBoardPanel = new javax.swing.JPanel();
         jBoardTitlePanel = new javax.swing.JPanel();
         jBoardLabel = new javax.swing.JLabel();
-        jBoardTextField = new javax.swing.JTextField();
-        jButton2BoardColumn = new javax.swing.JButton();
-        jButton3BoardColumn = new javax.swing.JButton();
-        jButton4BoardColumn = new javax.swing.JButton();
-        jButton5BoardColumn = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         jButton6BoardColumn = new javax.swing.JButton();
-        jButton1BoardColumn = new javax.swing.JButton();
-        jButton7BoardColumn = new javax.swing.JButton();
-        jLabelBoardColumns = new javax.swing.JLabel();
+        jButton6BoardColumn1 = new javax.swing.JButton();
+        jButton6BoardColumn2 = new javax.swing.JButton();
+        jButton6BoardColumn3 = new javax.swing.JButton();
+        jButton6BoardColumn4 = new javax.swing.JButton();
+        jButton6BoardColumn5 = new javax.swing.JButton();
+        jButton6BoardColumn6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,90 +45,139 @@ public class boardPanel extends javax.swing.JFrame {
         jBoardLabel.setForeground(new java.awt.Color(204, 102, 0));
         jBoardLabel.setText("Connect 4");
 
+        jTable2.setFont(new java.awt.Font("Ravie", 1, 20)); // NOI18N
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Col 0", "Col 1", "Col 2", "Col 3", "Col 4", "Col 5", "Col 6"
+            }
+        ));
+        jTable2.setRowHeight(50);
+        jScrollPane2.setViewportView(jTable2);
+
+        jButton6BoardColumn.setText("6");
+        jButton6BoardColumn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn.setIconTextGap(0);
+        jButton6BoardColumn.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn.setMaximumSize(new java.awt.Dimension(50, 23));
+        jButton6BoardColumn.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        jButton6BoardColumn1.setText("0");
+        jButton6BoardColumn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn1.setIconTextGap(0);
+        jButton6BoardColumn1.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn1.setPreferredSize(new java.awt.Dimension(30, 30));
+        jButton6BoardColumn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6BoardColumn1ActionPerformed(evt);
+            }
+        });
+
+        jButton6BoardColumn2.setText("1");
+        jButton6BoardColumn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn2.setIconTextGap(0);
+        jButton6BoardColumn2.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn2.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        jButton6BoardColumn3.setText("2");
+        jButton6BoardColumn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn3.setIconTextGap(0);
+        jButton6BoardColumn3.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn3.setMaximumSize(new java.awt.Dimension(50, 23));
+        jButton6BoardColumn3.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        jButton6BoardColumn4.setText("3");
+        jButton6BoardColumn4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn4.setIconTextGap(0);
+        jButton6BoardColumn4.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn4.setMaximumSize(new java.awt.Dimension(50, 23));
+        jButton6BoardColumn4.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        jButton6BoardColumn5.setText("4");
+        jButton6BoardColumn5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn5.setIconTextGap(0);
+        jButton6BoardColumn5.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn5.setMaximumSize(new java.awt.Dimension(50, 23));
+        jButton6BoardColumn5.setPreferredSize(new java.awt.Dimension(30, 30));
+
+        jButton6BoardColumn6.setText("5");
+        jButton6BoardColumn6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6BoardColumn6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6BoardColumn6.setIconTextGap(0);
+        jButton6BoardColumn6.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton6BoardColumn6.setMaximumSize(new java.awt.Dimension(50, 23));
+        jButton6BoardColumn6.setPreferredSize(new java.awt.Dimension(30, 30));
+
         org.jdesktop.layout.GroupLayout jBoardTitlePanelLayout = new org.jdesktop.layout.GroupLayout(jBoardTitlePanel);
         jBoardTitlePanel.setLayout(jBoardTitlePanelLayout);
         jBoardTitlePanelLayout.setHorizontalGroup(
             jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jBoardTitlePanelLayout.createSequentialGroup()
-                .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jBoardTitlePanelLayout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(jBoardLabel)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jBoardTitlePanelLayout.createSequentialGroup()
+                .add(0, 30, Short.MAX_VALUE)
+                .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                    .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .add(jBoardTitlePanelLayout.createSequentialGroup()
-                        .add(113, 113, 113)
-                        .add(jBoardTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 485, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jBoardTitlePanelLayout.createSequentialGroup()
-                        .add(245, 245, 245)
-                        .add(jBoardLabel)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                        .add(jButton6BoardColumn1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jButton6BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .add(30, 30, 30))
         );
         jBoardTitlePanelLayout.setVerticalGroup(
             jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jBoardTitlePanelLayout.createSequentialGroup()
                 .add(12, 12, 12)
                 .add(jBoardLabel)
-                .add(18, 18, 18)
-                .add(jBoardTextField, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 279, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 377, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jButton6BoardColumn1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jButton6BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
-
-        jButton2BoardColumn.setText("2");
-
-        jButton3BoardColumn.setText("3");
-
-        jButton4BoardColumn.setText("4");
-
-        jButton5BoardColumn.setText("5");
-
-        jButton6BoardColumn.setText("6");
-
-        jButton1BoardColumn.setText("1");
-
-        jButton7BoardColumn.setText("7");
-        jButton7BoardColumn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7BoardColumnActionPerformed(evt);
-            }
-        });
-
-        jLabelBoardColumns.setText("columns");
 
         org.jdesktop.layout.GroupLayout JBoardPanelLayout = new org.jdesktop.layout.GroupLayout(JBoardPanel);
         JBoardPanel.setLayout(JBoardPanelLayout);
         JBoardPanelLayout.setHorizontalGroup(
             JBoardPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(JBoardPanelLayout.createSequentialGroup()
-                .add(116, 116, 116)
-                .add(jButton1BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton2BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton3BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton4BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 41, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton5BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton6BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 42, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jButton7BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 43, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(51, 51, 51)
-                .add(jLabelBoardColumns)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(jBoardTitlePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JBoardPanelLayout.setVerticalGroup(
             JBoardPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(JBoardPanelLayout.createSequentialGroup()
-                .add(jBoardTitlePanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(JBoardPanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.CENTER)
-                    .add(jButton1BoardColumn)
-                    .add(jButton7BoardColumn)
-                    .add(jButton2BoardColumn)
-                    .add(jButton3BoardColumn)
-                    .add(jButton4BoardColumn)
-                    .add(jButton5BoardColumn)
-                    .add(jButton6BoardColumn)
-                    .add(jLabelBoardColumns))
-                .add(0, 60, Short.MAX_VALUE))
+            .add(jBoardTitlePanel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -147,9 +196,9 @@ public class boardPanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton7BoardColumnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7BoardColumnActionPerformed
+    private void jButton6BoardColumn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6BoardColumn1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7BoardColumnActionPerformed
+    }//GEN-LAST:event_jButton6BoardColumn1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,15 +206,15 @@ public class boardPanel extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jBoardLabel;
-    private javax.swing.JTextField jBoardTextField;
     private javax.swing.JPanel jBoardTitlePanel;
-    private javax.swing.JButton jButton1BoardColumn;
-    private javax.swing.JButton jButton2BoardColumn;
-    private javax.swing.JButton jButton3BoardColumn;
-    private javax.swing.JButton jButton4BoardColumn;
-    private javax.swing.JButton jButton5BoardColumn;
     private javax.swing.JButton jButton6BoardColumn;
-    private javax.swing.JButton jButton7BoardColumn;
-    private javax.swing.JLabel jLabelBoardColumns;
+    private javax.swing.JButton jButton6BoardColumn1;
+    private javax.swing.JButton jButton6BoardColumn2;
+    private javax.swing.JButton jButton6BoardColumn3;
+    private javax.swing.JButton jButton6BoardColumn4;
+    private javax.swing.JButton jButton6BoardColumn5;
+    private javax.swing.JButton jButton6BoardColumn6;
+    private javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
