@@ -6,14 +6,16 @@
 //testing
 package connect4;
 
+import static connect4.Start.name1;
 import help.HelpMenu;
 import java.io.IOException;
-//import java.util.Scanner;
+import java.util.Scanner;
 /**
 *
 * @author Lorinlochridge
 */
 public class Connect4 {
+
     String instructions = " Welcome to Connect 4!"
             + "\n" + "Lets Play!";
     //Instruction Start display:
@@ -74,7 +76,7 @@ public class Connect4 {
 //        System.out.println("Your token will be " + p2);
 //    }
     public  void display() {
-        player1 = Start.name1;
+//        player1 = Start.getText(name1);
         player2 = Start.name2;
         if(player1 == null){
             player1 = "Player 1";
@@ -82,11 +84,11 @@ public class Connect4 {
         if(player2 == null){
             player2 = "Player 2";
         }
-//        p1 = player1.charAt(0);
-//        p2 = player1.charAt(0);
+        p1 = player1.charAt(0);
+        p2 = player1.charAt(0);
         System.out.println("-----------------------------------------------------");
         System.out.println("|Welcome to Connect4!.  Let's get started!|");
-//        System.out.println("|Welcome " + player1 + " and " + player2 + "Let's get started!|");
+        System.out.println("|Welcome " + player1 + " and " + player2 + ", Let's get started!|");
         System.out.println("-----------------------------------------------------");
         System.out.println(this.instructions);
         System.out.println(this.toprow);

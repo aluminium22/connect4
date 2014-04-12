@@ -7,10 +7,10 @@ import java.util.Scanner;
 //lots of methods for each aspect of the game
 public class Play
 {
-    public static char p1 = Connect4.player1.charAt(0);
-    public static char p2 = Connect4.player1.charAt(0);
-    public static String pn1 = String.valueOf(p1);
-    public static String pn2 = String.valueOf(p2);
+    public static char p1;// = Connect4.player1.charAt(0);
+    public static char p2;// = Connect4.player1.charAt(0);
+    public static String pn1 = String.valueOf(Connect4.p1);
+    public static String pn2 = String.valueOf(Connect4.p2);
 //        p1 = 
 //        p2 = 
     

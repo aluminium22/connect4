@@ -49,6 +49,8 @@ public class Start extends javax.swing.JDialog {
         player1 = new javax.swing.JTextField();
         player2 = new javax.swing.JTextField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+
         jButton1.setText("Start!");
         jButton1.setToolTipText("");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,6 +165,8 @@ public class Start extends javax.swing.JDialog {
             }
         });
     }
+    public void get(){
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -176,6 +180,6 @@ public class Start extends javax.swing.JDialog {
     }
 
     private String getText(JTextField player1) {
-        return null;
+        return name1;
     }
 }

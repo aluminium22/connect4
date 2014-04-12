@@ -39,7 +39,6 @@ public class NewGame {
             }while(play==1 || play==2);
             switch(play) {
                 case '1':
-                    Play game = new Play();
                     Play.playgame();
                     System.out.println("Start Game");
                     break;
