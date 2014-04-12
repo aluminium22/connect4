@@ -81,6 +81,7 @@ public class Connect4 {
 //        System.out.println("Your token will be " + p2);
 //    }
     public  void display() {
+        player1 = Start.name1;
         player2 = Start.name2;
         if(player1 == null){
             player1 = "Player 1";
