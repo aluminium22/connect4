@@ -123,7 +123,6 @@ public class Start extends javax.swing.JDialog {
         // TODO add your handling code here:
         do{ 
             try {
-                variable();
                 Connect4.StartItAll();
             } catch (IOException ex) {
                 Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
