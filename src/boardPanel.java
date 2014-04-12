@@ -2,22 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package connect4Frames;
+
+
+import connect4.Connect4;
 
 /**
  *
  * @author Aluminium
  */
 public class boardPanel extends javax.swing.JFrame {
-    String name1 = "Me";
-
     /**
      * Creates new form boardPanel
      */
-//    public static void main (String[] args){
-//        boardPanel run = new boardPanel();
-//        run.initComponents(); 
-//    }
     public boardPanel() {
         initComponents();
     }
@@ -43,7 +39,6 @@ public class boardPanel extends javax.swing.JFrame {
         jButton6BoardColumn4 = new javax.swing.JButton();
         jButton6BoardColumn5 = new javax.swing.JButton();
         jButton6BoardColumn6 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,7 +49,7 @@ public class boardPanel extends javax.swing.JFrame {
         jTable2.setFont(new java.awt.Font("Ravie", 1, 20)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
+                {Connect4.p1, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -68,15 +63,6 @@ public class boardPanel extends javax.swing.JFrame {
         ));
         jTable2.setRowHeight(50);
         jScrollPane2.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setHeaderValue("Col 0");
-            jTable2.getColumnModel().getColumn(1).setHeaderValue("Col 1");
-            jTable2.getColumnModel().getColumn(2).setHeaderValue("Col 2");
-            jTable2.getColumnModel().getColumn(3).setHeaderValue("Col 3");
-            jTable2.getColumnModel().getColumn(4).setHeaderValue("Col 4");
-            jTable2.getColumnModel().getColumn(5).setHeaderValue("Col 5");
-            jTable2.getColumnModel().getColumn(6).setHeaderValue("Col 6");
-        }
 
         jButton6BoardColumn.setText("6");
         jButton6BoardColumn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -137,13 +123,14 @@ public class boardPanel extends javax.swing.JFrame {
         jButton6BoardColumn6.setMaximumSize(new java.awt.Dimension(50, 23));
         jButton6BoardColumn6.setPreferredSize(new java.awt.Dimension(30, 30));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText(name1 + "it's your turn");
-
         org.jdesktop.layout.GroupLayout jBoardTitlePanelLayout = new org.jdesktop.layout.GroupLayout(jBoardTitlePanel);
         jBoardTitlePanel.setLayout(jBoardTitlePanelLayout);
         jBoardTitlePanelLayout.setHorizontalGroup(
             jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, jBoardTitlePanelLayout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(jBoardLabel)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jBoardTitlePanelLayout.createSequentialGroup()
                 .add(0, 30, Short.MAX_VALUE)
                 .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
@@ -163,21 +150,13 @@ public class boardPanel extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jButton6BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(30, 30, 30))
-            .add(jBoardTitlePanelLayout.createSequentialGroup()
-                .add(107, 107, 107)
-                .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(jBoardLabel, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(jLabel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jBoardTitlePanelLayout.setVerticalGroup(
             jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jBoardTitlePanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .add(12, 12, 12)
                 .add(jBoardLabel)
-                .add(2, 2, 2)
-                .add(jLabel1)
-                .add(18, 18, 18)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 377, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jBoardTitlePanelLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
@@ -190,8 +169,6 @@ public class boardPanel extends javax.swing.JFrame {
                     .add(jButton6BoardColumn, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
-
-        jLabel1.getAccessibleContext().setAccessibleName(name1);
 
         org.jdesktop.layout.GroupLayout JBoardPanelLayout = new org.jdesktop.layout.GroupLayout(JBoardPanel);
         JBoardPanel.setLayout(JBoardPanelLayout);
@@ -220,9 +197,6 @@ public class boardPanel extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void run(){
-        initComponents();
-    }
     private void jButton6BoardColumn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6BoardColumn1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6BoardColumn1ActionPerformed
@@ -230,6 +204,7 @@ public class boardPanel extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jBoardLabel;
     private javax.swing.JPanel jBoardTitlePanel;
@@ -240,7 +215,6 @@ public class boardPanel extends javax.swing.JFrame {
     private javax.swing.JButton jButton6BoardColumn4;
     private javax.swing.JButton jButton6BoardColumn5;
     private javax.swing.JButton jButton6BoardColumn6;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables

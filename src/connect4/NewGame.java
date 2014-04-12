@@ -40,7 +40,7 @@ public class NewGame {
             switch(play) {
                 case '1':
                     Play game = new Play();
-                    game.playgame();
+                    Play.playgame();
                     System.out.println("Start Game");
                     break;
                 case '2':

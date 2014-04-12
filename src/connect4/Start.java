@@ -6,7 +6,6 @@
 
 package connect4;
 
-import connect4.Connect4;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,20 +16,24 @@ import javax.swing.JTextField;
  *
  * @author Rob
  */
-public class board extends javax.swing.JDialog {
+public class Start extends javax.swing.JDialog {
     int a = 1;
+    public static String name1;
+    public static String name2;
     Connect4 runHome = new Connect4();
 
     /**
      * Creates new form board
+     * @param parent
+     * @param modal
      */
-    public board(java.awt.Frame parent, boolean modal) {
+    public Start(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
 
-    board() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    Start() {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -46,8 +49,6 @@ public class board extends javax.swing.JDialog {
         player1 = new javax.swing.JTextField();
         player2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jButton1.setText("Start!");
         jButton1.setToolTipText("");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -56,9 +57,14 @@ public class board extends javax.swing.JDialog {
             }
         });
 
-        player1.setText("player1");
+        player1.setText("Me");
+        player1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                player1ActionPerformed(evt);
+            }
+        });
 
-        player2.setText("player2");
+        player2.setText("You");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,7 +77,7 @@ public class board extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(player1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
                 .addComponent(player2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(83, 83, 83))
         );
@@ -92,20 +98,30 @@ public class board extends javax.swing.JDialog {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        if(a == 1)
-        {
+        do{
             name1 = getText(player1);
-            name2 = getText(player2);
-            try {
-                runHome.StartItAll();
-            } catch (IOException ex) {
-                Logger.getLogger(board.class.getName()).log(Level.SEVERE, null, ex);
+            if(player1 == null){
+                name1 = "Player 1";
             }
-        }
+            name2 = getText(player2);
+            if(player2 == null){
+                name2 = "Player 2";
+            }
+            try {
+                Connect4.StartItAll();
+            } catch (IOException ex) {
+                Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }while(a == 1);
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void player1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_player1ActionPerformed
+
     /**
-     * @param args the command line arguments
+     * 
+     * @throws java.io.IOException
      */
 //    public static void main(String args[])  throws IOException{
     public static void start()  throws IOException{
@@ -122,13 +138,13 @@ public class board extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(board.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(board.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(board.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(board.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Start.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -136,7 +152,7 @@ public class board extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                board dialog = new board(new javax.swing.JFrame(), true);
+                Start dialog = new Start(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -153,8 +169,7 @@ public class board extends javax.swing.JDialog {
     private javax.swing.JTextField player1;
     private javax.swing.JTextField player2;
     // End of variables declaration//GEN-END:variables
-    String name1;
-    String name2;
+
     
     void StartItAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

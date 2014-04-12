@@ -8,7 +8,7 @@ package connect4;
 
 import help.HelpMenu;
 import java.io.IOException;
-import java.util.Scanner;
+//import java.util.Scanner;
 /**
 *
 * @author Lorinlochridge
@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Connect4 {
     String instructions = " Welcome to Connect 4!"
             + "\n" + "Lets Play!";
-    //Instruction board display:
+    //Instruction Start display:
     String toprow = " _ _ _ _ _ _ ";
     String midrows = "|_|_|_|_|_|_|";
     //board variables
@@ -24,13 +24,10 @@ public class Connect4 {
     int taken;
     int newgame;
 //    int help;
-    public static String name1;
-    public static String name2;
-    String player1 = name1;
-    String player2 = name2;
-    public static String p1;
-    public static String p2;
-    
+    public static String player1 = Start.name1;
+    public static String player2 = Start.name2;
+    public static char p1;
+    public static char p2;
     
         /**
 * @param args the command line arguments
@@ -38,16 +35,18 @@ public class Connect4 {
 */
 
     public static void main(String[] args) throws IOException{
-    board.start();
+    Start.start();
     }
     public static void StartItAll() throws IOException{
         Connect4 myGame = new Connect4();
-        String name1;
-        String name2;
+        Start start = new Start();
+//        char p1;
+//        char p2;
+//        
 //       myGame.getName1();
 //       myGame.getName2();
-//        p1 = Character.toString(name1.charAt(0));
-//        p2 = Character.toString(name2.charAt(0));
+//        char p1 = player1.charAt(0);
+//        char p2 = player2.charAt(0);
         //HomeMenu.PlayerNames(args);
 //        name1 = menu.player1;
 //      name2 = menu.player2;
@@ -75,13 +74,23 @@ public class Connect4 {
 //        System.out.println("Your token will be " + p2);
 //    }
     public  void display() {
-        
-        
+        player1 = Start.name1;
+        player2 = Start.name2;
+        if(player1 == null){
+            player1 = "Player 1";
+        }
+        if(player2 == null){
+            player2 = "Player 2";
+        }
+//        p1 = player1.charAt(0);
+//        p2 = player1.charAt(0);
         System.out.println("-----------------------------------------------------");
-        System.out.println("|Welcome " +  "and" +  ".  Let's get started!|");
+        System.out.println("|Welcome to Connect4!.  Let's get started!|");
+//        System.out.println("|Welcome " + player1 + " and " + player2 + "Let's get started!|");
         System.out.println("-----------------------------------------------------");
         System.out.println(this.instructions);
         System.out.println(this.toprow);
+        System.out.println(this.midrows);
         System.out.println(this.midrows);
         System.out.println(this.midrows);
         System.out.println(this.midrows);

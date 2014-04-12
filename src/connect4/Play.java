@@ -7,8 +7,12 @@ import java.util.Scanner;
 //lots of methods for each aspect of the game
 public class Play
 {
-    static String p1 = Connect4.p1;
-    static String p2 = Connect4.p2;
+    public static char p1 = Connect4.player1.charAt(0);
+    public static char p2 = Connect4.player1.charAt(0);
+    public static String pn1 = String.valueOf(p1);
+    public static String pn2 = String.valueOf(p2);
+//        p1 = 
+//        p2 = 
     
     
   //We need to first create the basic visual pattern
@@ -53,7 +57,7 @@ public class Play
     {
       if (f[i][c] == " ")
       {
-        f[i][c] = p1;
+        f[i][c] = pn1;
         break;
       }
        
@@ -71,7 +75,7 @@ public class Play
     {
       if (f[i][c] == " ")
       {
-        f[i][c] = p2;
+        f[i][c] = pn2;
         break;
       }
        
@@ -154,7 +158,13 @@ public class Play
     boolean loop = true;
     int count = 0;
     printPattern(f);
-    System.out.println(p1 + ", and " + p2);
+    System.out.println(pn1 + ", and " + pn2);
+    if(pn1 == null){
+        pn1 = "1";
+    }
+    if(pn2 == null){
+        pn2 = "2";
+    }
     while(loop)
     {
        if (count % 2 == 0) p1Turn(f);
@@ -163,10 +173,10 @@ public class Play
        printPattern(f);
        if (checkWinner(f) != null)
        {
-          if (checkWinner(f) == p1)
-             System.out.println("Congratulations " + Connect4.name1 + "!  You won!");
-          else if (checkWinner(f)== p2)
-            System.out.println("Congratulations " + Connect4.name2 + "!  You won!");
+          if (checkWinner(f) == pn1)
+             System.out.println("Congratulations " + Connect4.player1 + "!  You won!");
+          else if (checkWinner(f)== pn2)
+            System.out.println("Congratulations " + Connect4.player2 + "!  You won!");
          loop = false;
     }
   }
