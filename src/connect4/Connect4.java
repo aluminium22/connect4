@@ -6,7 +6,6 @@
 //testing
 package connect4;
 
-import static connect4.Start.name1;
 import help.HelpMenu;
 import java.io.IOException;
 import java.util.Scanner;
@@ -26,8 +25,8 @@ public class Connect4 {
     int taken;
     int newgame;
 //    int help;
-    public static String player1 = Start.name1;
-    public static String player2 = Start.name2;
+    public static String player1;
+    public static String player2;
     public static char p1;
     public static char p2;
     
@@ -42,6 +41,7 @@ public class Connect4 {
     public static void StartItAll() throws IOException{
         Connect4 myGame = new Connect4();
         Start start = new Start();
+        System.out.println(Start.name1 + Start.name2);
 //        char p1;
 //        char p2;
 //        
@@ -59,6 +59,11 @@ public class Connect4 {
         HelpMenu.YourTurn();
         NewGame NG = new NewGame();
             }
+
+    public Connect4() {
+        this.player2 = Start.name2;
+        this.player1 = Start.name1;
+    }
    //need to enter code here, just don't know how.
 //     
 //   public void getName1() {
@@ -76,7 +81,6 @@ public class Connect4 {
 //        System.out.println("Your token will be " + p2);
 //    }
     public  void display() {
-//        player1 = Start.getText(name1);
         player2 = Start.name2;
         if(player1 == null){
             player1 = "Player 1";

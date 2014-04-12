@@ -18,8 +18,12 @@ import javax.swing.JTextField;
  */
 public class Start extends javax.swing.JDialog {
     int a = 1;
-    public static String name1;
-    public static String name2;
+
+    /**
+     *
+     */
+//    public static String name1;
+//    public static String name2;
     Connect4 runHome = new Connect4();
 
     /**
@@ -48,6 +52,8 @@ public class Start extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         player1 = new javax.swing.JTextField();
         player2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -60,6 +66,9 @@ public class Start extends javax.swing.JDialog {
         });
 
         player1.setText("Me");
+        player1.setToolTipText("");
+        player1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        player1.setName("Me"); // NOI18N
         player1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 player1ActionPerformed(evt);
@@ -68,6 +77,10 @@ public class Start extends javax.swing.JDialog {
 
         player2.setText("You");
 
+        jLabel1.setText("Player1s Name");
+
+        jLabel2.setText("Player 2s Name");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,18 +88,26 @@ public class Start extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(163, 163, 163)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addComponent(player1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 172, Short.MAX_VALUE)
-                .addComponent(player2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(player1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(player2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(112, Short.MAX_VALUE)
+                .addContainerGap(92, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(player1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(player2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -100,27 +121,25 @@ public class Start extends javax.swing.JDialog {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        do{
-            name1 = getText(player1);
-            if(player1 == null){
-                name1 = "Player 1";
-            }
-            name2 = getText(player2);
-            if(player2 == null){
-                name2 = "Player 2";
-            }
+        do{ 
             try {
+                variable();
                 Connect4.StartItAll();
             } catch (IOException ex) {
                 Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }while(a == 1);
+        }while(a==1);
     }//GEN-LAST:event_jButton1MouseClicked
-
     private void player1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_player1ActionPerformed
         // TODO add your handling code here:
+        name1 = String.valueOf(getText(player1));
+        name2 = String.valueOf(getText(player2));
     }//GEN-LAST:event_player1ActionPerformed
-
+    public void variable(){
+        
+        name1 = String.valueOf(getText(player1));
+        name2 = String.valueOf(getText(player2));
+    }
     /**
      * 
      * @throws java.io.IOException
@@ -165,21 +184,24 @@ public class Start extends javax.swing.JDialog {
             }
         });
     }
-    public void get(){
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField player1;
     private javax.swing.JTextField player2;
     // End of variables declaration//GEN-END:variables
+public static String name1;
+public static String name2;
+
+    private JTextField getText(JTextField player1) {
+        return player1;
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+   
 
     
-    void StartItAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    private String getText(JTextField player1) {
-        return name1;
-    }
 }
